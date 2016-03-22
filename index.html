@@ -11,6 +11,21 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <!--JS imports-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+	<script src="https://www.desmos.com/api/v0.6/calculator.js?apiKey=b88927985e064453ab206bac398da46f"></script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-73065355-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
 </head>
 <body>
 <header>
@@ -31,7 +46,7 @@
         <ul class="side-nav" id="mobile">
             <li><a href="javascript:addVar();">Add</a></li>
             <li><a href="javascript:delVar();">Remove</a></li>
-            <li><a class="modal-trigger" href="#helpmodal">Help</a></li>
+			<li><a class="modal-trigger" href="#helpmodal">Help</a></li>
             <li><a class="modal-trigger" href="#bugsmodal">Bugs</a></li>
             <li><a class="modal-trigger" href="#changemodal">Changelog</a></li>
         </ul>
@@ -41,6 +56,41 @@
 </header>
 <main class="valign-wrapper">
 <div class="container grey lighten-4 z-depth-1 hoverable">
+<!-- Yaks code starts here until the end point comment. Copyright Jack Stevenson, licensed under the project license (@teh_yak_ on twitter)-->
+	<form action="javascript:void(0)" class="hide-on-small-only col s8 offset-s2">
+		<div id="graphSettings" class="row">
+			<div class="row">
+			<div class="col m3 offset-m3 s10 offset-s1">
+				<input type="number" id="graphHeight" name="graphHeight" required min="0" step="10" class="updateGraph">
+				<label for="graphHeight">Height of Graph</label>
+			</div>   
+			</div>
+			<div class="row">
+				<div class="col m3 offset-m3 s10 offset-s1">
+					<input type="color" id="costscolor" name="costscolor" class="updateC">
+					<label for="costscolor">Color of Costs</label>
+				</div>
+				<div class="col m3 offset-m0 s10 offset-s1">
+					<input type="color" id="salesColor" name="salesColor" class="updateC">
+					<label for="salesColor">Color of Sales</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col m3 offset-m3 s10 offset-s1">
+					<input type="button" id="cookies" name="cookies" onclick="enable()">
+					<label for="cookies" id="enableCooks" class="text-color-black">Store Graph Settings?</label>
+				</div>
+				<div class="col m3 offset-m0 s10 offset-s1">
+					<input type="button" id="disclamerCookies" name="disclamerCookies" onclick="displayWarning()">
+					<label for="disclamerCookies" id="disclamerCookies" class="text-color-black">Show Cookie Disclaimer</label>
+				</div>
+			</div>
+		</div>
+	</form>
+<div class="divider"></div>
+<!-- Yaks code ends here.-->
+
+
 <form action="javascript:void(0);" name="">
     <div class="center-align"><h5 class="blue-grey-text text-darken-3">Variables</h5></div>
     <div class="row">
@@ -164,22 +214,9 @@
     </div>
 </div>
 
-<!--JS imports-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-<script type="text/javascript" src="js/functions.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-<script src="https://www.desmos.com/api/v0.6/calculator.js?apiKey=b88927985e064453ab206bac398da46f"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-73065355-1', 'auto');
-  ga('send', 'pageview');
 
-</script>
+
+
 </body>
 </html>
