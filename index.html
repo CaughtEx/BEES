@@ -108,9 +108,8 @@
         <h4>Help</h4>
         <h5>Input</h5>
         <p>Fixed costs | Costs that do not change based on production - this should be the total.</p>
-        <p>Variable costs 1 | the costs of production for producing the product (per product) before the specified amount of output is reached.</p>
-        <p>Variable costs 2 | the costs of production for producing the product (per product) after the specified amount of output is reached.</p>
-        <p>Point of change | the amount of output where variable costs switch from variable cost 1 to variable cost 2.</p>
+        <p>Variable cost | the costs of production for producing the product (per product) after the specified amount of output is reached.</p>
+        <p>Point of change | the amount of output where the current variable cost should start.</p>
         <p>Selling price per unit | The selling price of the product/service per unit.</p>
         <p>Submit | Really?</p>
         <p>All inputs for monetary values can be in any currency, just make sure you use the same currency on all inputs.</p>
@@ -119,11 +118,7 @@
 
         <h5>Output</h5>
         <p>Any output that produces 'N/A' is not an error, it is where two breakevens do not exist for the input.</p>
-        <p>Lower BE Point | The (lower) amount of output that is needed to breakeven.</p>
-        <p>Upper BE Point | The (higher) amount of output that is needed to breakeven.</p>
-        <p>MEEO | The 'Most Extreme Enclosed Output' is only applicable for two breakevens, it tells you the output needed for the most extreme value in an enclosed area.</p>
-        <p>MEEPL | The 'Most Extreme Enclosed Profit/Loss' is only applicable for two breakevens, it tells you the highest profit/loss in an enclosed area. Positive values are the largest
-        profit you can make, no matter what, whilst negatives are the largest loss you can make</p>
+        <p>Break Even Point | The amount of output that is needed to breakeven.</p>
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
@@ -132,11 +127,10 @@
 
 <div id="bugsmodal" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Bugs</h4>
+        <h4>Bugs/"features"</h4>
         <p>The break even points can produce a negative value under the right circumstances,
             and although mathematically correct, this is not discarded by the program,
             and so should be disregarded for business purposes</p>
-        <p>Graphing fails with a large number (>10) variable cost rates - likely due to sanity checks on desmos</p>
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
@@ -147,6 +141,7 @@
     <div class="modal-content">
         <h4>Changelog</h4>
         <h5>Version 2</h5>
+        <p>2.1.2 | Fixed false break even values</p>
         <p>2.1.1 | Moved to our own API key</p>
         <p>2.1.0 | Added graphing support back in</p>
         <p>2.0.0 | Multiple variable cost rates are now possible! Graphing support has been removed in favour of this. However, graphing is being worked on currently!</p>
