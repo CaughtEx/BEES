@@ -46,17 +46,14 @@ function init() {
             calculator.setExpression({id: "p"+j, latex: "p_{"+j+"}="+all[j][1]});
             str += "+(1/2)(v_{"+j+"}-v_{"+(j-1)+"})(x+abs(x-p_{"+j+"})-p_{"+j+"})";
         }
-        /*
-        else {
-        //Not sure what this was for...
-        }
-        */
+	    
+	    
         var _t = breakEven(f, total, all[j][0], i);
         var _t2 = (f/(i*_t)) + (all[0][0]/i);
         for(var k=1; k <= j; k++) {
             _t2 += (1/(2*i*_t))*(all[k][0]-all[k-1][0])*(_t+Math.abs(_t-all[k][1])-all[k][1]);
         }
-	console.log(f, total, all[j][0], i, _t, _t2);
+	console.log(f, total, all[j][0], i, _t, _t2, all[j+1][1]);
         if(round(_t2) == 1 && (i < all.length - 1 ? _t <= all[j+1][1] : true)) {
             document.getElementById("ib"+j).value = Math.ceil(_t) + " (" + _t + ")";
         } else {
