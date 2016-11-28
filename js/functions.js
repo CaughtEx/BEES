@@ -53,7 +53,7 @@ function init() {
         for(var k=1; k <= j; k++) {
             _t2 += (1/(2*i*_t))*(all[k][0]-all[k-1][0])*(_t+Math.abs(_t-all[k][1])-all[k][1]);
         }
-	console.log(f, total, all[j][0], i, _t2, _t, all[j+1][1], all.length - 1);
+	console.log(f, total, all[j][0], i, _t2, _t, all[j+1][1], all.length - 1, j);
         if(round(_t2) == 1 && (j < all.length - 1 ? _t <= all[j+1][1] : true)) {
             document.getElementById("ib"+j).value = Math.ceil(_t) + " (" + _t + ")";
         } else {
