@@ -56,6 +56,7 @@ function init() {
         for(var k=1; k <= j; k++) {
             _t2 += (1/(2*i*_t))*(all[k][0]-all[k-1][0])*(_t+Math.abs(_t-all[k][1])-all[k][1]);
         }
+	console.log(f, total, all[j][0], i, _t, _t2);
         if(round(_t2) == 1) {
             document.getElementById("ib"+j).value = Math.ceil(_t) + " (" + _t + ")";
         } else {
